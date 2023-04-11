@@ -3,9 +3,6 @@ import requests
 import allure
 
 
-from src.enums.global_enums import GlobalErrorMessages
-
-
 with open('_internal_links.txt', 'r') as f:
     internal_urls = f.read().splitlines()
 
