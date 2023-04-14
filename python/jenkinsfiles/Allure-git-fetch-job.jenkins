@@ -6,22 +6,11 @@ pipeline {
     agent { 
         label 'main'
         }
-    triggers { pollSCM('* * * * *') }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
     stages {
-        stage("docker login") {
-            steps {
-                echo " ============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: 'nickolit', usernameVariable: 'nickolit', passwordVariable: 'password')]) {
-                    sh """
-                    docker login -u $USERNAME -p $PASSWORD
-                    """
-                }
-            }
-        }
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
@@ -30,11 +19,11 @@ pipeline {
                 }
             }
         }
-        stage("docker push") {
+        stage("docker run") {
             steps {
-                echo " ============== start pushing image =================="
+                echo " ============== start running image =================="
                 sh '''
-                docker push nickolit/toolbox:latest
+                docker run docker/toolbox:latest
                 '''
             }
         }
