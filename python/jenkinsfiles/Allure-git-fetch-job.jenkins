@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t docker/toolbox:latest . '
+                	sh 'docker build -t nickolit/toolbox:latest . '
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo " ============== start running image =================="
                 sh '''
-                docker run docker/toolbox:latest
+                docker run nickolit/toolbox:latest
                 '''
             }
         }
