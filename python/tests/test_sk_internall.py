@@ -14,4 +14,4 @@ def test_getting_posts(internal_url):
     response = requests.get(internal_url)
 
     with allure.step("Запрос отправлен. Сверяем ответ url на статус-код 200"):
-        assert response.status_code == 200, GlobalErrorMessages.WRONG_URL_STATUS.value "Полученное количество элементов не соответствует ожидаемому"
+        assert response.status_code == 200, GlobalErrorMessages.WRONG_URL_STATUS.value
