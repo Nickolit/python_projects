@@ -24,6 +24,6 @@ RUN apk --purge -v del py-pip
 CMD tail -f /dev/null
 RUN mkdir /python-test
 WORKDIR /python-test
-COPY python/tests/test_sk_internall.py /python-test
+COPY python/tests/. /python-test
 RUN pytest /python-test/test_sk_internall.py --alluredir=allure-results
 
