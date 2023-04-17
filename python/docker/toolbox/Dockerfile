@@ -1,5 +1,5 @@
 FROM anapsix/alpine-java
-MAINTAINER Justin Commu
+MAINTAINER Nickolos Burakovets
 
 RUN mkdir /allure
 RUN mkdir /allure-results
