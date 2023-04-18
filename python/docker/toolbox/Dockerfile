@@ -4,9 +4,9 @@ MAINTAINER Nickolos Burakovets
 RUN mkdir /allure && \
     mkdir /allure-results && \
     mkdir /allure-report && \
-    mkdir /allure-config
-
-RUN apk update && \
+    mkdir /allure-config && \
+   
+    apk update && \
     apk add ca-certificates && \
     update-ca-certificates && \
     apk add openssl && \
