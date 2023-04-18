@@ -7,10 +7,10 @@ RUN mkdir /allure && \
     mkdir /allure-config
 
 RUN apk update && \
-	apk add ca-certificates && \
-	update-ca-certificates && \
-	apk add openssl && \
-	apk add unzip
+    apk add ca-certificates && \
+    update-ca-certificates && \
+    apk add openssl && \
+    apk add unzip
 
 RUN wget https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.0.0/allure-2.0.0.tgz
 RUN unzip allure-commandline.zip -d /allure
